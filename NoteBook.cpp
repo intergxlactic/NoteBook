@@ -1,6 +1,3 @@
-﻿//Проект - блокнот в котором человек задает команду 
-// 1(посмотреть свой блокнот) и 2(добавить новый пункт в свой блокнот)
-
 #include <iostream>
 #include <conio.h>
 #include <fstream>
@@ -46,7 +43,6 @@ func:
 	cout << "Enter the command (1,2): " << endl;
 	cout << "1 - View your notebook" << endl;
 	cout << "2 - Add items to the notebook" << endl;
-	cout << "3 - Delete item in notebook" << endl;
 	cout << "q - Exiting the programme" << endl;
 
 	char input = _getch();
@@ -61,8 +57,6 @@ func:
 		addItemInNoteBook(file, line);
 		system("CLS");
 		goto func;
-	case '3':
-		deleteItem(file); // при нажатии на 3 сделать функцию удаления строки из файла
 	case 'q':
 		exit(0);
 	}
