@@ -36,13 +36,25 @@ string reading() {
 	return line;
 }
 
+int getPosition() {
+    int num;
+    cout << "Enter item position:" << endl;
+    cin >> num;
+    return num;
+} 
+
+void deleteItem(string filename, int lineNumber) {
+    
+}
 
 void notebook(string file) {
 func:
-	vector<string> line;
+    int numOfPosItem;
+    vector<string> line;
 	cout << "Enter the command (1,2): " << endl;
 	cout << "1 - View your notebook" << endl;
 	cout << "2 - Add items to the notebook" << endl;
+    cout << "3 - Delete item from notebook" << endl;
 	cout << "q - Exiting the programme" << endl;
 
 	char input = _getch();
@@ -57,6 +69,10 @@ func:
 		addItemInNoteBook(file, line);
 		system("CLS");
 		goto func;
+    case '3':
+        numOfPosItem = getPosition(); 
+        deleteItem(file, numOfPosItem);
+        goto func;
 	case 'q':
 		exit(0);
 	}
@@ -69,3 +85,4 @@ int main() {
 
 	notebook(file);
 }
+ // добавить функцию удаления задачи из блокнота
